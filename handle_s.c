@@ -13,6 +13,7 @@ void handle_s(va_list args, int *count)
 	if (s == NULL)
 	{
 		*count += write(1, "(null)", 6);
+		exit(98);
 	}
 	else
 	{

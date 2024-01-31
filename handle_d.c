@@ -15,32 +15,38 @@ void handle_d(va_list args, int *count)
 	int digit;
 	int arg = va_arg(args, int);
 
-
-	if (arg < 0)
+	if (arg >= INT_MIN && arg <= INT_MAX)
 	{
-		isNegative = 1;
-		arg = -arg;
-	}
 
-	digit = 0;
-	do {
-		digit = arg % 10;
-		buffer[index++] = '0' + digit;
-		arg /= 10;
-	} while (arg > 0);
+		if (arg < 0)
+		{
+			isNegative = 1;
+			arg = -arg;
+		}
 
-	if (isNegative)
-	{
-		write(1, "-", 1);
-		(*count)++;
-	}
+		digit = 0;
 
-	while (--index >= 0)
-	{
-		c = buffer[index];
-		write(1, &c, 1);
-		(*count)++;
+		do {
+			digit = arg % 10;
+			buffer[index++] = '0' + digit;
+			arg /= 10;
+		} while (arg > 0);
+
+		if (isNegative)
+		{
+			write(1, "-", 1);
+			(*count)++;
+		}
+
+		while (--index >= 0)
+		{
+			c = buffer[index];
+			write(1, &c, 1);
+			(*count)++;
+		}
 	}
+	else
+		exit (98);
 }
 
 

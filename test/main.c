@@ -25,5 +25,6 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+	_printf("decimal - %d: [%b] in binary\n", 762534, 762534);
 	return (0);
 }

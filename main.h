@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <stdlib.h>
+void handle_b(va_list args, int *count);
 void handle_d(va_list args, int *count);
 void handle_c(va_list args, int *count);
 void handle_s(va_list args, int *count);

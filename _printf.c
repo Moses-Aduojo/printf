@@ -37,6 +37,9 @@ int _printf(const char *format, ...)
 				case 'i':
 					handle_d(args, &count);
 					break;
+				case 'b':
+					handle_b(args, &count);
+					break;
 				default:
 					count += write(1, "Invalid specifier", 17);
 					break;
