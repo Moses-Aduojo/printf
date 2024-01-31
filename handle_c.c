@@ -9,5 +9,9 @@
 void handle_c(va_list args, int *count)
 {
 	int c = va_arg(args, int);
-	*count += write(1, &c, 1);
+
+	if (write(1, &c, 1) == -1)
+		exit(EXIT_FAILURE);
+	else
+		*count += 1;
 }
