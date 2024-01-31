@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 					handle_s(args, &count);
 					break;
 				case '%':
-					handle_percent(args, &count);
+					handle_percent(&count);
 					break;
 				case 'd':
 					handle_d(args, &count);
