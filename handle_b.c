@@ -8,12 +8,12 @@
  */
 void handle_b(va_list args, int *count)
 {
-	int arg;
+	unsigned int arg;
 	char bit[33] = {0};
 	char reversed_bit[33] = {0};
 	int i = 0, len;
 
-	arg = va_arg(args, int);
+	arg = va_arg(args, unsigned int);
 
 	do {
 		bit[i++] = (arg % 2) + '0';
